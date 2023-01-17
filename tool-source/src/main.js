@@ -13,7 +13,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   main.component(key, component);
 }
 
-// main.config.performance = process.env.NODE_ENV !== "production";
+main.config.performance = process.env.NODE_ENV !== "production";
 main.use(router);
 main.use(ElementPlus);
 main.mount("#app");
