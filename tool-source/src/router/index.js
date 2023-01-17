@@ -17,22 +17,6 @@ export const routes = [
       },
     ],
   },
-  {
-    path: "/tool",
-    component: () => import("@/layout"),
-    children: [
-      {
-        path: "/",
-        name: "Home",
-        component: () => import("@/views/home"),
-      },
-      {
-        path: "/memrise",
-        name: "Memrise",
-        component: () => import("@/views/memrise"),
-      },
-    ],
-  },
 ];
 
 const router = createRouter({
