@@ -15,6 +15,11 @@ export const routes = [
         name: "Memrise",
         component: () => import("@/views/memrise"),
       },
+      {
+        path: "/translate",
+        name: "Translate",
+        component: () => import("@/views/translate"),
+      },
     ],
   },
 ];

@@ -30,6 +30,12 @@ export default {
           name: "Tool generate Memrise",
           link: "Memrise",
         },
+        {
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzAa47pEHrBzuiTmA_AqnqwbWP3vXV9iBZ7w&usqp=CAU",
+          name: "Tool translate",
+          link: "Translate",
+        },
       ],
     });
 
