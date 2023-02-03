@@ -139,6 +139,16 @@ individual setting`,
           let rowSplit = content.split("=>");
           const txtTranslate = removeGetText(rowSplit[0]);
           const txtJP = removeGetText(rowSplit[1]);
+          if (state.form.format === 1) {
+            result = result.replaceAll(
+              `placeholder="${txtJP}"`,
+              `:placeholder="$t('${state.form.fileName}.${txtTranslate}')"`
+            );
+            result = result.replaceAll(
+              `label="${txtJP}"`,
+              `:label="$t('${state.form.fileName}.${txtTranslate}')"`
+            );
+          }
           result = result.replaceAll(
             state.form.format === 1 ? txtJP : `'${txtJP}'`,
             state.form.format === 1
@@ -147,6 +157,20 @@ individual setting`,
           );
         }
       });
+
+      if (state.form.format !== 1) {
+        arrayPHPSplit.forEach((content, index) => {
+          if (index !== 0 && index !== arrayPHPSplit.length - 1) {
+            let rowSplit = content.split("=>");
+            const txtTranslate = removeGetText(rowSplit[0]);
+            const txtJP = removeGetText(rowSplit[1]);
+            result = result.replaceAll(
+              txtJP,
+              `{t('${state.form.fileName}.${txtTranslate}')}`
+            );
+          }
+        });
+      }
       state.form.result = result;
     };
 
