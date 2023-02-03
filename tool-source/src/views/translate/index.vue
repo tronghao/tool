@@ -140,7 +140,7 @@ individual setting`,
           const txtTranslate = removeGetText(rowSplit[0]);
           const txtJP = removeGetText(rowSplit[1]);
           result = result.replaceAll(
-            txtJP,
+            state.form.format === 1 ? txtJP : `'${txtJP}'`,
             state.form.format === 1
               ? `{{ $t('${state.form.fileName}.${txtTranslate}') }}`
               : `t('${state.form.fileName}.${txtTranslate}')`
@@ -155,7 +155,7 @@ individual setting`,
      * @author HaoDT
      */
     const removeGetText = (text) => {
-      return text.trim().replaceAll(`",`, "").replaceAll(`"`, "");
+      return text.trim().replaceAll(`',`, "").replaceAll(`'`, "");
     };
 
     /**
@@ -167,10 +167,15 @@ individual setting`,
       let textJPSplit = state.form.textJP.split("\n");
       let textTranslateSplit = state.form.textTranslate.split("\n");
       textJPSplit.forEach((content, index) => {
-        result += `"${textTranslateSplit[index]
+        result += `'${textTranslateSplit[index]
           .replaceAll(" ", "_")
           .replaceAll("/", "_")
-          .toLowerCase()}" => "${content}",\n`;
+          .replaceAll("_(", "_")
+          .replaceAll("(", "_")
+          .replaceAll(")", "")
+          .replaceAll("'", "")
+          .replaceAll("-", "_")
+          .toLowerCase()}' => '${content}',\n`;
       });
       result += `]`;
       state.form.arrayPHP = result;
