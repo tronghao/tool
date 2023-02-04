@@ -20,6 +20,11 @@ export const routes = [
         name: "Translate",
         component: () => import("@/views/translate"),
       },
+      {
+        path: "/cheatography",
+        name: "Cheatography",
+        component: () => import("@/views/cheatography"),
+      },
     ],
   },
 ];
@@ -27,6 +32,7 @@ export const routes = [
 const router = createRouter({
   history: createWebHistory(),
   linkActiveClass: "active",
+  mode: "history",
   routes,
   scrollBehavior: (to) => {
     if (to.hash) {

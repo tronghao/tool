@@ -4,4 +4,9 @@ module.exports = defineConfig({
   // publicPath: "/tool/",
   transpileDependencies: true,
   lintOnSave: false,
+  configureWebpack: {
+    devServer: {
+      historyApiFallback: true,
+    },
+  },
 });

@@ -17,3 +17,14 @@ main.config.performance = process.env.NODE_ENV !== "production";
 main.use(router);
 main.use(ElementPlus);
 main.mount("#app");
+
+// import { createApp } from "vue";
+// import Translate from "./views/translate";
+
+// const app = createApp({
+//   components: {
+//     Translate,
+//   },
+// });
+
+// app.mount("#app");

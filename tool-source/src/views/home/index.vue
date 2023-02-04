@@ -36,6 +36,12 @@ export default {
           name: "Tool translate",
           link: "Translate",
         },
+        {
+          image:
+            "https://d4.alternativeto.net/ztPWLbSRqx3zLA3237NOI3tqwBsOO8VkPybrxx2BZes/rs:fill:280:280:0/g:ce:0:0/YWJzOi8vZGlzdC9pY29ucy9jaGVhdG9ncmFwaHlfNjYzOTQucG5n.png",
+          name: "Cheat sheet Cheatography",
+          link: "Cheatography",
+        },
       ],
     });
 
